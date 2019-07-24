@@ -2,30 +2,37 @@
 <html>
 <head>
 	<title>TODO管理</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="index.css">
 </head>
 <body>
 
-	<div id="app">
-		<h2>TODO list</h2>
-		<form v-on:submit.prevent>
-			<input type="text" v-model="newItem">
-			<button v-on:click="addItem">
-				Add
-			</button>
-		</form>
-		<ul>
-			<li v-for="(todo, index) in todos">
-				<input type="checkbox" v-model="todo.isDone">
-				<span v-bind:class="{ done: todo.isDone }">{{ todo.item }}</span>
-				<button v-on:click="deleteItem(index)">Delete</button>
-			</li>
-		</ul>
-		<!-- デバッグ用
-			<pre>{{ $data }}</pre>
-			 -->
+	<div class="container">
+		<div class="row">
+			<div class="col-8 offset-2 mt-4">
+				<div id="app">
+					<h2>TODO list</h2>
+					<form v-on:submit.prevent>
+						<input type="text" v-model="newItem">
+						<button v-on:click="addItem">
+							Add
+						</button>
+					</form>
+					<ul>
+						<li v-for="(todo, index) in todos">
+							<input type="checkbox" v-model="todo.isDone">
+							<span v-bind:class="{ done: todo.isDone }">{{ todo.item }}</span>
+							<button v-on:click="deleteItem(index)">Delete</button>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
 	</div>
 
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 <script type="text/javascript" src="main.js"></script>
 
