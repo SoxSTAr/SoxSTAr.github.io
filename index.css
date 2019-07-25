@@ -9,10 +9,3 @@
 #app ul > li > button {
 	margin-top: 10px;
 }
-
-#app {
-  background: #fff;
-  border-radius: 4px;
-  padding: 20px;
-  transition: all 0.2s;
-}
